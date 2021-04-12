@@ -211,11 +211,12 @@ const forgeTheFellowShip = () => {
 const theBalrog = () => {
 
   // 1. change the 'Gandalf' text to 'Gandalf the White'
-
+  buddies.shift();
+  buddies.unshift("Gandalf the White");
   // 2. add a class "the-white" to this element
-
+  buddies["Gandalf the White"].addClass("the-white");
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
-
+  $("the-white").css({"background-color" : "white", "border" : "solid 1px grey"});
 };
 
 // COMMIT YOUR WORK
@@ -227,11 +228,13 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
-
+  alert("The horn of gondor has been blown")
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+  const $boromir = $("buddies.eq(4)");
+  const $bboromir = $boromoir.strike();
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+  const $urukhai = $("baddies.eq(2)");
+  $urukhai.removeClass(baddy);
 };
 
 // COMMIT YOUR WORK
@@ -243,9 +246,12 @@ const hornOfGondor = () => {
 const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-
+  const bestFriedns = buddies.splice(0, 2,);
+  bestFriends.append("#mordor");
   // 2. add a div with an id of 'mount-doom' to Mordor
-
+  const $divdoom = ("<div>");
+  $divdoom.text("mount-doom");
+  $divdoom.append("#Mordor");
 };
 
 // COMMIT YOUR WORK
@@ -257,11 +263,13 @@ const itsDangerousToGoAlone = () => {
 const weWantsIt = () => {
 
   // 1. Create a div with an id of 'gollum' and add it to Mordor
-
+    const $divgollum = ("<div>");
+    $divgollum.attr("id", "gollum");
+    $divgollum.append("#Mordor");
   // 2. Move the ring from Frodo and give it to Gollum
-
+    $divgollum.attr("id", "the-ring");
   // 3. Move Gollum into Mount Doom
-
+    $divgollum.append("#mountdoom")
 };
 
 // COMMIT YOUR WORK
@@ -273,11 +281,11 @@ const weWantsIt = () => {
 const thereAndBackAgain = () => {
 
   // 1. remove Gollum and the Ring from the DOM
-
+  $divgollum.empty();
   // 2. remove all the baddies from the DOM
-
+  $baddies.empty();
   // 3. Move all the hobbits back to the shire
-
+  $hobbits.append("#The-Shire");
 };
 
 // COMMIT YOUR WORK
